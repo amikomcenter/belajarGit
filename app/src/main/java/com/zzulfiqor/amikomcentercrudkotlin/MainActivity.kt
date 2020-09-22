@@ -1,5 +1,6 @@
 package com.zzulfiqor.amikomcentercrudkotlin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -10,5 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        btnZuhair.setOnClickListener {
+            val i = Intent(this, CrudZuhair::class.java)
+            startActivity(i)
+        }
     }
 }
