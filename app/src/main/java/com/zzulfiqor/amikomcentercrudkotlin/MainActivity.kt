@@ -15,5 +15,10 @@ class MainActivity : AppCompatActivity() {
             val i = Intent(this, CrudZuhair::class.java)
             startActivity(i)
         }
+
+        btnYoga.setOnClickListener {
+            val i = Intent(this, CrudZuhair::class.java)
+            startActivity(i)
+        }
     }
 }
