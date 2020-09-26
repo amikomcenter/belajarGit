@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Amikom Center Crud Kotlin</string>
+    <string name="lorem">this is me</string>
 </resources>
