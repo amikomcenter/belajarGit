@@ -12,7 +12,6 @@ import kotlinx.coroutines.InternalCoroutinesApi
 class EditCrud : AppCompatActivity() {
     companion object{
         const val EDIT_NOTE_EXTRA = "EXTRA_NOTE"
-        const val EDIT_NOTE_DESC = "EXTRA_DESC"
     }
     private lateinit var noteModel: NoteModel
     private var isUpdate = false
@@ -60,6 +59,7 @@ class EditCrud : AppCompatActivity() {
 
         btnDelete.setOnClickListener {
             deleteNote(noteModel)
+            finish()
         }
     }
 

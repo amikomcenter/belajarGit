@@ -54,7 +54,7 @@ class CrudYoga : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == noteCode && resultCode == Activity.RESULT_OK){
-           data?.getParcelableExtra<NoteModel>(EditCrud.EDIT_NOTE_DESC)?.let {
+           data?.getParcelableExtra<NoteModel>(EditCrud.EDIT_NOTE_EXTRA)?.let {
                 dao.insert(NoteModel(name = it.name, desc = it.desc))
             }
         }
