@@ -58,7 +58,7 @@ class BarangHelper (context: Context) {
             null,
             null)
     }
-
+    // tes
     fun insert(values: ContentValues?): Long {
         return database.insert(DATABASE_TABLE, null, values)
     }
