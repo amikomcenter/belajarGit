@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Amikom Center Crud Kotlin</string>
+    <string name="dummy_nama_barang">dummy_nama_barang</string>
+    <string name="dummy_stok_barang">dummy_stok_barang</string>
 </resources>
