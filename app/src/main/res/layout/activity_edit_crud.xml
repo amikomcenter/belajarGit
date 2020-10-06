@@ -62,9 +62,10 @@
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="0dp"
-        android:background="@color/colorPrimary"
+        android:background="@android:color/holo_red_light"
         android:visibility="gone"
-        android:text="elete"
+        android:textColor="#fff"
+        android:text="delete"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

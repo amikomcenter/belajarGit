@@ -13,6 +13,7 @@ class CrudYoga : AppCompatActivity() {
     private lateinit var noteAdapter: NoteAdapter
     private val noteCode = 1
     private lateinit var dao: NoteDao
+    private val listnote = arrayListOf<NoteModel>()
     @InternalCoroutinesApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +29,7 @@ class CrudYoga : AppCompatActivity() {
     fun getNote(){
         val noteDB = NoteDb.getDbNotes(applicationContext)
         dao = noteDB.getNoteDao()
-        val listnote = arrayListOf<NoteModel>()
+        listnote.clear()
         listnote.addAll(dao.getAll())
         setupRecycler(listnote)
         if (listnote.isNotEmpty()){
@@ -40,7 +41,7 @@ class CrudYoga : AppCompatActivity() {
 
     private fun setupRecycler(list: List<NoteModel>){
         rv_note.apply {
-            adapter = NoteAdapter(list, object : NoteAdapter.NoteListener{
+            noteAdapter = NoteAdapter(list, object : NoteAdapter.NoteListener{
                 override fun OnItemClicked(noteModel: NoteModel) {
                     val i = Intent(this@CrudYoga, EditCrud::class.java).apply {
                         putExtra(EditCrud.EDIT_NOTE_EXTRA, noteModel)
@@ -48,7 +49,10 @@ class CrudYoga : AppCompatActivity() {
                     startActivity(i)
                 }
             })
+            adapter = noteAdapter
+            noteAdapter.notifyDataSetChanged()
             layoutManager = LinearLayoutManager(this@CrudYoga)
+
         }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
